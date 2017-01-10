@@ -8,11 +8,13 @@ import { WorkoutService } from './../../app/services/workouts.service';
   templateUrl: 'workouts.html',
 })
 export class WorkoutsPage implements OnInit {
+  workouts : any[]
   ngOnInit(){
     this.workoutService.getWorkouts().subscribe( workouts => {
-        console.log(workouts);
+      this.workouts = workouts;
     });
   }
   constructor( private workoutService : WorkoutService){
+
   }
 }
