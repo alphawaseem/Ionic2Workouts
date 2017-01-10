@@ -5,7 +5,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class WorkoutService {
-    constructor(private http:Http){
-        console.log('Service connected');
+
+    constructor(private http : Http){
+        console.log('Connected');
     }
 }
