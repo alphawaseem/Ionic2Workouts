@@ -6,7 +6,7 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item *ngFor="let workout of workouts">
+        <ion-item *ngFor="let workout of workouts" (click)="workoutSelected($event,workout)">
             {{workout.title}}
         </ion-item>
     </ion-list>

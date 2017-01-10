@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { AddPage } from '../pages/add/add';
 import { TabsPage } from '../pages/tabs/tabs';
+import { WorkoutDetails } from '../pages/workoutDetails/workout.details';
 import { WorkoutsPage } from '../pages/workouts/workouts';
 import { WorkoutService} from './services/workouts.service';
 import { HttpModule } from '@angular/http';
@@ -13,7 +14,8 @@ import { HttpModule } from '@angular/http';
     AboutPage,
     AddPage,
     TabsPage,
-    WorkoutsPage
+    WorkoutsPage,
+    WorkoutDetails,
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -26,7 +28,8 @@ import { HttpModule } from '@angular/http';
     AddPage,
     WorkoutsPage,
     TabsPage,
-    WorkoutsPage
+    WorkoutsPage,
+    WorkoutDetails
   ],
   providers: [WorkoutService,{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
