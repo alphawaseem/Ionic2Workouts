@@ -11,7 +11,7 @@ export class WorkoutsPage implements OnInit {
   workouts : any[]
   lastSelectedWorkout : any ;
   ngOnInit(){
-    this.getWorkouts();
+    
   }
   getWorkouts(){
     this.workoutService.getWorkouts().subscribe( workouts => {
@@ -19,13 +19,12 @@ export class WorkoutsPage implements OnInit {
     });
   }
   constructor(public navCtrl: NavController, private workoutService : WorkoutService){
-
+    this.getWorkouts();
   }
   workoutSelected(event,workout){
     this.lastSelectedWorkout = workout ;
     this.navCtrl.push(WorkoutDetails,{
       workout : workout
     });
-    console.log(this.lastSelectedWorkout);
   }
 }

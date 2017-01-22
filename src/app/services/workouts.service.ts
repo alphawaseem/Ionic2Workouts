@@ -22,4 +22,8 @@ export class WorkoutService {
         return this.http.post(this.mLabBaseUrl+this.workoutsPath+'?apiKey='+this.apiKey,JSON.stringify(workout)
         ,{headers:headers}).map(res => res.json());
     }
+    deleteWorkout(id:string){
+        return this.http.delete(this.mLabBaseUrl+this.workoutsPath+'/'+id+'?apiKey='+this.apiKey)
+        .map(res=>res.json());
+    }
 }
