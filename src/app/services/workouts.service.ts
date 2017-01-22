@@ -16,4 +16,10 @@ export class WorkoutService {
        return this.http.get(this.mLabBaseUrl + this.workoutsPath + '?apiKey=' + this.apiKey)
         .map( res => res.json());
     }
+    addWorkout(workout : {title:string,type:string,note:string}){
+        let headers = new Headers();
+        headers.append('Content-Type','application/json');
+        return this.http.post(this.mLabBaseUrl+this.workoutsPath+'?apiKey='+this.apiKey,JSON.stringify(workout)
+        ,{headers:headers}).map(res => res.json());
+    }
 }
